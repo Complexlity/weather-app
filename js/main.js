@@ -28,7 +28,6 @@ let lat = "51.5085";
 let lon = "-0.1257";
 
 window.onload = function () {
-  alert("I am here");
   getDefaultLocation();
 };
 
@@ -53,6 +52,7 @@ async function loadSite(cityName) {
 
   let weatherData = await getRequest(cityName);
   if (weatherData === 400) {
+    console.log(weatherData);
     alert(cityName.toUpperCase() + " Not Found!. Resetting to your location");
     getDefaultLocation();
     return;
@@ -85,7 +85,8 @@ async function getDefaultLocation() {
   //   let randomCity = getRandomCity();
   //   loadSite(randomCity);
   // }
-  let randomCity = getRandomCity;
+  let randomCity = getRandomCity();
+  console.log(randomCity);
   loadSite(randomCity);
 }
 
