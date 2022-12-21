@@ -28,6 +28,7 @@ let lat = "51.5085";
 let lon = "-0.1257";
 
 window.onload = function () {
+  alert("I am here");
   getDefaultLocation();
 };
 
