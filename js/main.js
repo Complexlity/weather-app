@@ -47,8 +47,8 @@ function submitQuery() {
 }
 
 async function loadSite(cityName) {
-  loader.classList.add("transition-none");
-  loader.style.opacity = "1";
+  // loader.classList.add("transition-none");
+  // loader.style.opacity = "1";
 
   let weatherData = await getRequest(cityName);
   if (weatherData === 400) {
@@ -86,7 +86,6 @@ async function getDefaultLocation() {
   //   loadSite(randomCity);
   // }
   let randomCity = getRandomCity();
-  console.log(randomCity);
   loadSite(randomCity);
 }
 
@@ -126,8 +125,8 @@ function updatePage(data) {
   windPressure.innerHTML = data.main.pressure + "hpa";
   humidity.innerHTML = data.main.humidity + "%";
   windSpeed.innerHTML = data.wind.speed + "mph";
-  loader.classList.remove("transition-none");
-  loader.style.opacity = "0";
+  // loader.classList.remove("transition-none");
+  // loader.style.opacity = "0";
 }
 
 function setTheme(theme) {
