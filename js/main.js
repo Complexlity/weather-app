@@ -63,28 +63,30 @@ async function loadSite(cityName) {
 }
 
 async function getDefaultLocation() {
-  if (navigator.geolocation) {
-    // device can return its location
-    alert("I am here 1");
-    function success(position) {
-      alert("I am here 2");
-      lat = position.coords.latitude;
-      lon = position.coords.longitude;
-      loadSite([lat, lon]);
-    }
+  // if (navigator.geolocation) {
+  //   // device can return its location
+  //   alert("I am here 1");
+  //   function success(position) {
+  //     alert("I am here 2");
+  //     lat = position.coords.latitude;
+  //     lon = position.coords.longitude;
+  //     loadSite([lat, lon]);
+  //   }
 
-    function error(err) {
-      alert("I am here 3");
-      alert("Location data unauthorized!! Rerouting to random location");
-      let randomCity = getRandomCity();
-      loadSite(randomCity);
-    }
+  //   function error(err) {
+  //     alert("I am here 3");
+  //     alert("Location data unauthorized!! Rerouting to random location");
+  //     let randomCity = getRandomCity();
+  //     loadSite(randomCity);
+  //   }
 
-    navigator.geolocation.getCurrentPosition(success, error);
-  } else {
-    let randomCity = getRandomCity();
-    loadSite(randomCity);
-  }
+  //   navigator.geolocation.getCurrentPosition(success, error);
+  // } else {
+  //   let randomCity = getRandomCity();
+  //   loadSite(randomCity);
+  // }
+  let randomCity = getRandomCity;
+  loadSite(randomCity);
 }
 
 function updatePage(data) {
